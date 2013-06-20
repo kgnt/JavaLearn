@@ -78,5 +78,17 @@ public class TestString {
 		Integer i = new Integer(10);
 		System.out.println(new Integer(100 + i));
 	}
+	
+	@Test
+	public void testEmpty() {
+		String cc = "";
+		if(cc.isEmpty())
+			System.out.println("haha");
+	}
+	
+	@Test
+	public void testNext() {
+		System.out.println("a\n\n\nb");
+	}
 
 }
