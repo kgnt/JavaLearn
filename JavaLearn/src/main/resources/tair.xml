@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="tairManager" class="com.taobao.tair.impl.mc.MultiClusterTairManager"
+		init-method="init">
+		<property name="configID">
+			<value>com.taobao.tair.hudsonmc</value>
+		</property>
+		<property name="dynamicConfig">
+			<value type="java.lang.Boolean">true</value>
+		</property>
+	</bean>
+</beans>
