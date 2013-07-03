@@ -89,6 +89,52 @@ public class TestString {
 	@Test
 	public void testNext() {
 		System.out.println("a\n\n\nb");
+		System.out.println(System.currentTimeMillis() / 1000);
+	}
+	
+	private List<? extends Object> getResult() {
+		List<Object> list = new ArrayList<Object>();
+		list.add(new Integer(1));
+		list.add(new Double(1));
+		list.add("number");
+		
+		return list;
+	}
+	
+	@Test
+	public void testExtend() {
+		List<? extends Object> returnList = getResult();
+		for(Object n : returnList) {
+			if(n instanceof Integer)
+				System.out.print("Integer: ");
+			if(n instanceof Double)
+				System.out.print("Double: ");
+			if(n instanceof String)
+				System.out.print("String: ");
+			System.out.println(n);
+		}
+	}
+	
+	private String vv = "old";
+	private void changeVV() {
+		vv = "new";
+	}
+	
+	private void getVV() {
+		System.out.println(vv);
 	}
 
+	@Test
+	public void testVV() {
+		System.out.println(vv);
+		changeVV();
+		getVV();
+	}
+	
+	@Test
+	public void testNull() {
+		String a = null;
+		if("".equals(a))
+			System.out.println("a is null!");
+	}
 }
